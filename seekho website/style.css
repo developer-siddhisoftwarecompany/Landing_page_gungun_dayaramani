@@ -221,6 +221,159 @@ p {
   max-width: 700px;
   padding: 0 1rem;
 }
+/* --- What's Waiting For You Section --- */
+.waiting-section {
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.waiting-section .container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Section Heading */
+.waiting-section .section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.waiting-section .section-subtitle {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  margin-bottom: 2.5rem;
+}
+
+/* Category Buttons */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.categories button {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+/* Category Buttons */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0 3rem;
+}
+
+.categories button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.categories button:hover {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* Active State */
+.categories button.active {
+  background-color: #0f0f0f;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+
+.categories button.active {
+  background-color: #fff;
+  color: #000;
+  font-weight: 600;
+}
+
+.categories button:hover {
+  background-color: #2b2b2b;
+}
+
+/* Video Slider */
+.video-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.video-slider::-webkit-scrollbar {
+  height: 8px;
+}
+.video-slider::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* Video Card */
+.video-card {
+  position: relative;
+  flex: 0 0 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #181818;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover img {
+  transform: scale(1.05);
+}
+
+.video-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.video-card .duration {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  color: #fff;
+  z-index: 2;
+}
 
 
 /* CTA Button */
@@ -261,4 +414,34 @@ p {
   .cta-btn {
     padding: 0.8rem 1.8rem;
   }
+}
+.video-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+.video-card:nth-child(2) { animation-delay: 0.1s; }
+.video-card:nth-child(3) { animation-delay: 0.2s; }
+.video-card:nth-child(4) { animation-delay: 0.3s; }
+.video-card:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* --- Filter Animation --- */
+.video-card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: scale(1);
+}
+
+.video-card:not(.fade-in) {
+  opacity: 0;
+  transform: scale(0.9);
 }
