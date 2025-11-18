@@ -932,7 +932,7 @@ blockquote {
   .download-container {
     flex-direction: column;
     text-align: center;
-    gap: 55px;
+    gap: 58px;
   }
   .download-left, .download-right {
     width: 100%;
