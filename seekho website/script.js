@@ -54,3 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    item.classList.toggle("active");
+
+    const answer = item.querySelector(".faq-answer");
+    answer.style.maxHeight = item.classList.contains("active") 
+      ? answer.scrollHeight + "px"
+      : "0px";
+  });
+});
