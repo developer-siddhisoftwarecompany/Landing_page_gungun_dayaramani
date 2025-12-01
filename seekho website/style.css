@@ -304,7 +304,7 @@ p {
 .categories button.active {
   background-color: #fff;
   color: #000;
-  font-weight: 600;
+  font-weight: 602;
 }
 
 .categories button:hover {
